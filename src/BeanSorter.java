@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
- * Input from file Name-Sal, Sort them , Output to a file
+ * Input from file Name-Sal, Sort them on salary , Output to a file
  * @author arun
  *
  */
@@ -25,6 +25,7 @@ public class BeanSorter {
 		
 		ArrayList<bean1> al = new ArrayList<bean1>();
 				
+		log("Input from file:");
 		while(sc.hasNextLine())
 		{
 			String s1;
@@ -43,8 +44,10 @@ public class BeanSorter {
 		
 		for (bean1 b1: al){
 			sb.append(b1.name+"-"+b1.sal+"\n");
-			log(sb.toString());
 		}
+		
+		log("\nSorted content to write to file:");
+		log(sb.toString());
 		
 		dos.append(sb);
 		
