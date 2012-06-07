@@ -5,7 +5,8 @@ public class Topcoder {
 	public static void main(String[] s)
 	{
 		Topcoder tc = new Topcoder();
-		System.out.println("Will all but 1st params add to 1st param-"+tc.buy(10,2,41,2,2));
+		//System.out.println("Will all but 1st params add to 1st param-"+tc.buy(10,2,41,2,2));
+		tc.checkCharMatch();
 	}
 	
 	// recursion
@@ -56,6 +57,63 @@ public class Topcoder {
 			else
 				return numTrucks(numCrates/2,loadSize) + numTrucks(numCrates/2+1,loadSize);  //http://community.topcoder.com/stat?c=problem_statement&pm=6011
 		}
+	}
+	
+	// return max of n after k swaps of elements
+	public int findMax(int n,int k)
+	{
+		if(k==0) return n;
+		else if (n==-1) return -1;
+		else
+		{
+			return findMax	(swapToPossibleMax(n),k-1);
+		}
+	}
+	
+	int swapToPossibleMax(int n)
+	{
+		char[] c =  Integer.toString(n).toCharArray();
+		int m_idx = -1;
+		char max=0;
+		
+		if(c.length==1)
+			return -1;
+		
+		//choosing the max elem other than first one
+		for(int i=1;i<c.length;i++)
+		{
+			if(c[i]>max)
+			{
+				max = c[i];
+			  	m_idx = i;
+			}
+		}
+		
+		if(max > c[0])
+		{
+			
+			// swap 1 st and max elem
+			char tc = c[0];
+			c[0] = c[m_idx];
+			c[m_idx] = tc;
+			
+		}
+		else 
+		{
+			// swap final 2 elems
+			char tc = c[c.length-2];
+			c[c.length-2] = c[c.length-1];
+			c[c.length-1] = tc;
+		}
+		
+		if( c[0]==0)
+			return -1;
+		
+		return Integer.parseInt(s);
+	}
+	
+	public void checkCharMatch(){
+		System.out.println('1'+1);
 	}
 
 }
