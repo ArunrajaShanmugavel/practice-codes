@@ -41,10 +41,10 @@ public class BinaryTreeExample
 		  
 		  System.out.print("\nBFS-");bfs(rootnode);
 		  System.out.print("\nDFS-"); dfs(rootnode);
-		  System.out.print("\nDFS with recursion-"); dfsRec(rootnode);  // postfix is same
+		 /* System.out.print("\nDFS with recursion-"); dfsRec(rootnode);  // postfix is same
 		  
 		  System.out.println("\nInserting on BTree-"); bfs(insert(rootnode,77));
-		  System.out.println("\nInserting on BTree-"); bfs(insertChg(rootnode,77));
+		  System.out.println("\nInserting on BTree-"); bfs(insertChg(rootnode,77));*/
 
 	  }
 	  
