@@ -17,7 +17,7 @@ public class syncobj {
 		try{
 		System.out.print("Thread:"+cnt+",Mehod:1-Am in");
 		Thread.sleep(2000);
-		System.out.println(", After 2 min out");
+		System.out.println(", After 2 sec out");
 		}
 		catch(Exception e)
 		{
@@ -30,7 +30,7 @@ public class syncobj {
 		try{
 		System.out.print("Thread:"+cnt+",Mehod:2-Am in");
 		Thread.sleep(2000);
-		System.out.println(", After 2 min out");
+		System.out.println(", After 2 sec out");
 		}
 		catch(Exception e)
 		{
