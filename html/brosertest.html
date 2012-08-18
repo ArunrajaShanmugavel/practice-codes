@@ -1,0 +1,42 @@
+<html>
+<body>
+<div style='text-align:center'>
+	<h3>
+		Hey am creating a script which detects the IE 6,7&8 versions
+	</h3>
+</div>
+
+<script type="text/javascript" src='jquery-1.7.1.js'></script>
+
+<!-- Browser script -->
+<script type="text/javascript">
+
+checkBrowserSupport = function(){
+
+// override loggers to avoid throwing errors
+if(window.console == null || window.console == undefined || !window.console)
+           console = { log: function() {}, info: log, warn: log, error: log, trace: log, debug: log };
+else if(!console.debug)
+         console.debug = function() {};
+
+
+  var not_support = false;
+  if($.browser.msie)
+  {
+    console.log('Version is '+$.browser.version);
+    not_support = ($.browser.version<9)?true:false;
+  }
+
+  if(not_support) 
+  { 
+    var option = confirm("You are in non-supported browser. On clicking Okay you will be directed to Browser DOWNLOAD page");
+    if (option) window.location = "http://www.google.com/chrome/"
+  }
+  else
+    console.log('browser is supported');
+}
+
+$.onload = checkBrowserSupport();
+</script>
+</body>
+</html>
