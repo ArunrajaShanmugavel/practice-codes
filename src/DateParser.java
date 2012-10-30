@@ -13,7 +13,7 @@ public class DateParser {
 		DateFormat formatter ; 
 		 Date date ; 
 		 formatter = new SimpleDateFormat("dd-MM-yy");
-		 date = (Date)formatter.parse("10-5-12");  
+		 date = formatter.parse("10-5-12");  
 		 System.out.println("Today is " +date );
 		 
 		 formatter = new SimpleDateFormat("HH a");

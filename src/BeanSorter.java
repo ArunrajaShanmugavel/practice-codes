@@ -9,7 +9,16 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
- * Input from file Name-Sal, Sort them on salary , Output to a file
+ * Input from file Name-Sal, Sort desc them on salary , Output to a file
+ * 
+ * ModelInput:
+ * Arun-1000
+ * Raja-2000
+ * 
+ * ModelOutput:
+ * Raja-2000
+ * Arun-1000
+ * 
  * @author arun
  *
  */
@@ -19,7 +28,7 @@ public class BeanSorter {
 	public static void main(String s[]) throws IOException
 	{
 		
-		FileInputStream fis = new FileInputStream("/Users/arun/IdeaProjects/file-ip-test.txt");
+		FileInputStream fis = new FileInputStream("/Users/arun/Hack/file-ip-test.txt");
 		
 		Scanner sc = new Scanner (fis, "UTF-8");
 		
@@ -34,9 +43,10 @@ public class BeanSorter {
 			al.add(new bean1(inArr[0],Integer.parseInt(inArr[1])));
 		}
 		
-		Collections.sort(al,new BeanComparator() );
+		//Collections.sort(al,new BeanComparator() );
+		Collections.sort(al);
 		
-		FileOutputStream fos = new FileOutputStream ("/Users/arun/IdeaProjects/file-op-test.txt");
+		FileOutputStream fos = new FileOutputStream ("/Users/arun/Hack/file-op-test.txt");
 		
 		OutputStreamWriter dos = new OutputStreamWriter (fos,"UTF-8");
 		
@@ -62,7 +72,8 @@ public class BeanSorter {
 
 }
 
-class bean1{
+// basic comparision placed in compareTo method
+class bean1 implements Comparable<bean1>{
 	
 	String name;
 	int sal;
@@ -71,9 +82,17 @@ class bean1{
 		this.name = name;
 		this.sal = sal;
 	}
+
+	@Override
+	public int compareTo(bean1 o) {
+		if(sal > o.sal) return -1;
+		else if(sal < o.sal) return 1;
+		else	return 0;
+	}
 	
 }
 
+// advanced comparison using iterator
 class BeanComparator implements Comparator<bean1>
 {
 	

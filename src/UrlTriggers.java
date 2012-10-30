@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class UrlTriggers {
 	
-	void urlConnector()
+	static void urlConnector()
 	{
 
 		URL url;
@@ -47,5 +47,10 @@ public class UrlTriggers {
 			System.out.println("Problem in the code");
 		}
 	
+	}
+	
+	public static void main(String s)
+	{
+		urlConnector();
 	}
 }

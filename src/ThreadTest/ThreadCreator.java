@@ -3,6 +3,7 @@ package ThreadTest;
 public class ThreadCreator extends Thread
 {
 	syncobj a;
+	
 	int ThrdCnt=0;
 	public ThreadCreator(syncobj a,int ThrdCnt)
 	{
@@ -16,7 +17,7 @@ public class ThreadCreator extends Thread
 		if(ThrdCnt==1||ThrdCnt==2)
 		{	
 			a.delayAndPrint(ThrdCnt);
-			a.delayAndPrint2(ThrdCnt);
+			new syncobj().delayAndPrint2(ThrdCnt);
 		}
 		
 		if(ThrdCnt==3)
